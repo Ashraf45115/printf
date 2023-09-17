@@ -12,7 +12,7 @@
 
 #define NULL_STRING "(null)"
 
-#define PARMAS_INIT {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+#define PARAMS_INIT {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
 
 #define CONVERT_LOWERCASE 1
 #define CONVERT_UNSIGNED 2
@@ -65,7 +65,7 @@ int _putchar(int c);
 /* print_functions.c */
 int print_char(va_list ap, params_t *params);
 int print_int(va_list ap, params_t *params);
-in print_string(va_list ap, params_t *params);
+int print_string(va_list ap, params_t *params);
 int print_percent(va_list ap, params_t *params);
 int print_s(va_list ap, params_t *params);
 
