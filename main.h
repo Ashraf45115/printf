@@ -1,5 +1,5 @@
 #ifndef _PRINTF_H
-#define _PRINTF_F
+#define _PRINTF_H
 
 #include <limits.h>
 #include <unistd.h>
@@ -19,7 +19,7 @@
 
 /**
  * struct parameters - parameters struct
- * @unisign: flag if unisigned value
+ * @unsign: flag if unisigned value
  * @plus_flag: on if plus_flag specified
  * @space_flag: on if hashtag_flag specified
  * @hashtag_flag: on if _flag specified
@@ -29,7 +29,7 @@
  * @precision: fieled precision specified
  * @h_modifier: on if h_modifier is specified
  * @l_modifier: on if l_modifier is specified
-*/
+ */
 
 typedef struct parameters
 {
@@ -43,19 +43,19 @@ typedef struct parameters
 	unsigned int width;
 	unsigned int precision;
 	unsigned int h_modifier		: 1;
-	unsigned int l_modifier 	: 1;
+	unsigned int l_modifier		: 1;
 } params_t;
 
 /**
  * struct specifier - struct token
  * @specifier: format token
  * @f: the function associated
-*/
+ */
 
 typedef struct specifier
 {
 	char *specifier;
-	int (*f) (va_list, params_t *);
+	int (*f)(va_list, params_t *);
 } specifier_t;
 
 /* _puts.c */

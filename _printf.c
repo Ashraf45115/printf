@@ -31,7 +31,7 @@ int _printf(const char *format, ...)
 		p++;
 		while (get_flag(p, &params)) /* while char at p is flag char */
 		{
-			p++;
+			p++; /* next char */
 		}
 		p = get_width(p, &params, ap);
 		p = get_precisios(p, &params, ap);
