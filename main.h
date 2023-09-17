@@ -19,7 +19,7 @@
 
 /**
  * struct parameters - parameters struct
- * @unsign: flag if unisigned value
+ * @unsign: flag if unsigned value
  * @plus_flag: on if plus_flag specified
  * @space_flag: on if hashtag_flag specified
  * @hashtag_flag: on if _flag specified
@@ -65,7 +65,7 @@ int _putchar(int c);
 /* print_functions.c */
 int print_char(va_list ap, params_t *params);
 int print_int(va_list ap, params_t *params);
-in print_string(va_list ap, params_t *params);
+int print_string(va_list ap, params_t *params);
 int print_percent(va_list ap, params_t *params);
 int print_s(va_list ap, params_t *params);
 
