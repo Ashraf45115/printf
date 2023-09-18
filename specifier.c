@@ -59,30 +59,6 @@ int get_print_func(char *s, va_list ap, params_t *params)
 }
 
 /**
- * get_modifier - finds the modifier func
- * @s: the format string
- * @params: the parameters struct
- *
- * Return: if modifier was valid
-*/
-
-int get_modifier(char *s, params_t *params)
-{
-	int i = 0;
-
-	switch (*s)
-	{
-		case 'h':
-			i = params->h_modifier = 1;
-			break;
-		case 'l':
-			i = params->l_modifier = 1;
-			break;
-	}
-	return (i);
-}
-
-/**
  * get_flag - finds the flag func
  * @s: the format string
  * @params: the parameters struct
@@ -109,6 +85,30 @@ int get_flag(char *s, params_t *params)
 			break;
 		case '0':
 			i = params->zero_flag = 1;
+			break;
+	}
+	return (i);
+}
+
+/**
+ * get_modifier - finds the modifier func
+ * @s: the format string
+ * @params: the parameters struct
+ *
+ * Return: if modifier was valid
+*/
+
+int get_modifier(char *s, params_t *params)
+{
+	int i = 0;
+
+	switch (*s)
+	{
+		case 'h':
+			i = params->h_modifier = 1;
+			break;
+		case 'l':
+			i = params->l_modifier = 1;
 			break;
 	}
 	return (i);

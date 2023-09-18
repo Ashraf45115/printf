@@ -3,17 +3,17 @@
 /**
  * print_from_to - prints a range of char addresses
  * @start: starting address
- * @step: stopping address
+ * @stop: stopping address
  * @except: except sddress
  *
  * Return: number bytes printed
 */
 
-int print_from_to(char *start, char *step, char *except)
+int print_from_to(char *start, char *stop, char *except)
 {
 	int sum = 0;
 
-	while (start <= step)
+	while (start <= stop)
 	{
 		if (start != except)
 			sum += _putchar(*start);
@@ -78,4 +78,3 @@ int print_rot13(va_list ap, params_t *params)
 	}
 	return (c);
 }
-
