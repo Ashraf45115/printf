@@ -124,20 +124,20 @@ int get_modifier(char *s, params_t *params)
  * Return: nrw pointer
 */
 
-char *git_width(char *s, params_t *params, va_list ap)
+char *get_width(char *s, params_t *params, va_list ap)
 {
-	int w = 0;
+	int d = 0;
 
 	if (*s == '*')
 	{
-		w = va_arg(ap, int);
+		d = va_arg(ap, int);
 		s++;
 	}
 	else
 	{
 		while (_isdigit(*s))
-			w = w * 10 + (*s++ - '0');
+			d = d * 10 + (*s++ - '0');
 	}
-	params->width = w;
+	params->width = d;
 	return (s);
 }
