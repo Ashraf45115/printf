@@ -116,7 +116,7 @@ int get_modifier(char *s, params_t *params)
 
 
 /**
- * git_width - gets the wtdth from the format string
+ * get_width - gets the wtdth from the format string
  * @s: the format string
  * @params: the parameters struct
  * @ap: the argument pointer
