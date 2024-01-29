@@ -5,12 +5,6 @@
 #include <stdarg.h>
 #include <stdlib.h>
 
-/**
-  * struct op - Struct format
-  *
-  * @op: The operator
-  * @f: The function associated
-  */
 
 typedef struct op
 {
