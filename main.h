@@ -1,6 +1,7 @@
 #ifndef MAIN_H
 #define MAIN_H
 
+#include <stdio.h>
 #include <unistd.h>
 #include <stdarg.h>
 #include <stdlib.h>
@@ -11,6 +12,7 @@
   * @op: The operator
   * @f: The function associated
   */
+
 
 typedef struct op
 {
