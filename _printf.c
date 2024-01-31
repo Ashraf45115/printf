@@ -14,6 +14,13 @@ int (*get_func(const char *format))(va_list)
 		{"s", print_str},
 		{"i", print_int},
 		{"d", print_dec},
+		{"b", print_bin},
+		{"u", print_u},
+		{"o", print_oct},
+		{"x", print_hex},
+		{"X", print_X},
+		{"S", print_S},
+		{"p", print_pointer},
 		{NULL, NULL}
 	};
 
