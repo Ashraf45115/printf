@@ -10,7 +10,7 @@ int print_dec(va_list d)
 
 	n = va_arg(d, int);
 	last = n % 10;
-	j = 0;
+	j = 1;
 	exp = 1;
 	n = n / 10;
 	num = n;

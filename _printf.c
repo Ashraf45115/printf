@@ -71,12 +71,12 @@ int _printf(const char *format, ...)
 				prtchar(format[i]);
 			count++;
 		}
-		else if (format[i + 1] != '\0')
+		else if (format[i] == '%' && get_func(&format[i + 1]))
 		{
 			f = get_func(&format[i + 1]);
 			if (f != NULL)
 			{
-				count += f(p);
+				count = count + f(p);
 				i++;
 			}
 		}

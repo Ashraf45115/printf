@@ -6,9 +6,9 @@
  */
 int print_int(va_list i)
 {
-	int n, digit, last, j, num, exp;
+	int n = va_arg(i, int);
+	int digit, last, j, num, exp;
 
-	n = va_arg(i, int);
 	j = 1;
 	exp = 1;
 	last = n % 10;
