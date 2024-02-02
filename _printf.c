@@ -54,16 +54,17 @@ int _printf(const char *format, ...)
 		return (-1);
 	for (i = 0; format[i] != '\0'; i++)
 	{
-		if (format[i] != '%')
+		if (format[i] != '%' && format[i])
 		{
 			prtchar(format[i]);
 			count++;
 		}
-		else if ((format[i + 1] == '%'))
+		else if ((format[i] == '%') && format[i + 1] == '\0')
+			return (count);
+		else if ((format[i] == '%') && !get_func(&format[i + 1]))
 		{
-			prtchar('%');
+			prtchar(format[i]);
 			count++;
-			i++;
 		}
 		else if (format[i + 1] != '\0')
 		{
@@ -72,7 +73,6 @@ int _printf(const char *format, ...)
 			{
 				count += f(p);
 				i++;
-				continue;
 			}
 		}
 		else if ((format[i + 1] == '%'))

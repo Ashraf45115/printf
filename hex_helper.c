@@ -1,75 +1,70 @@
 #include "main.h"
 /**
- * print_hex - converts decimal to base 16
- * @x: input number
- * Return: count of number printed
+ * print_hex_hlpr - prints an hexgecimal number.
+ * @num: arguments.
+ * Return: counter.
  */
-int print_hex_hlpr(unsigned long int n)
+int print_hex_hlpr(unsigned long int num)
 {
-        unsigned long int num;
-        long int count = 0, *arr, i;
+	long int i;
+	long int *array;
+	long int counter = 0;
+	unsigned long int temp = num;
 
-        num = n;
+	while (num / 16 != 0)
+	{
+		num /= 16;
+		counter++;
+	}
+	counter++;
+	array = malloc(counter * sizeof(long int));
 
-        while (num / 16 != 0)
-        {
-                num = num / 16;
-                count++;
-        }
-
-        count++;
-        arr = malloc(count * sizeof(int));
-
-        for (i = 0; i < count; i++)
-        {
-                arr[i] = n % 16;
-                n = n / 16;
-        }
-
-        for (i = count - 1; i >= 0; i--)
-        {
-                if (arr[i] > 9)
-                        arr[i] += 39;
-                prtchar(arr[i] + '0');
-        }
-	free(arr);
-        return (count);
+	for (i = 0; i < counter; i++)
+	{
+		array[i] = temp % 16;
+		temp /= 16;
+	}
+	for (i = counter - 1; i >= 0; i--)
+	{
+		if (array[i] > 9)
+			array[i] = array[i] + 39;
+		prtchar(array[i] + '0');
+	}
+	free(array);
+	return (counter);
 }
 
-#include "main.h"
 /**
- * print_X - prints hex numbers in uppercase
- * @X: input num
- * Return: count of numbers printed
+ * print_HEX_hlpr - prints an hexgecimal number.
+ * @num: number to print.
+ * Return: counter.
  */
-int print_HEX_hlpr(unsigned int n)
+int print_HEX_hlpr(unsigned int num)
 {
-        unsigned int num;
-        long int count = 0, *arr, i;
+	int i;
+	int *array;
+	int counter = 0;
+	unsigned int temp = num;
 
-        num = n;
+	while (num / 16 != 0)
+	{
+		num /= 16;
+		counter++;
+	}
+	counter++;
+	array = malloc(counter * sizeof(int));
 
-        while (num / 16 != 0)
-        {
-                num = num / 16;
-                count++;
-        }
-
-        count++;
-        arr = malloc(count * sizeof(int));
-
-        for (i = 0; i < count; i++)
-        {
-                arr[i] = n % 16;
-                n = n / 16;
-        }
-        for (i = count - 1; i >= 0; i--)
-        {
-                if (arr[i] > 9)
-                        arr[i] += 7;
-                prtchar(arr[i] + '0');
-        }
-
-        free(arr);
-        return (count);
+	for (i = 0; i < counter; i++)
+	{
+		array[i] = temp % 16;
+		temp /= 16;
+	}
+	for (i = counter - 1; i >= 0; i--)
+	{
+		if (array[i] > 9)
+			array[i] = array[i] + 7;
+		prtchar(array[i] + '0');
+	}
+	free(array);
+	return (counter);
 }

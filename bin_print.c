@@ -30,7 +30,5 @@ int print_bin(va_list b)
 	{
 		prtchar(arr[i] + '0');
 	}
-
-	free(arr);
 	return (count);
 }

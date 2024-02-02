@@ -10,9 +10,9 @@ int print_str(va_list s)
 	char *str;
 
 	str = va_arg(s, char *);
-	if (s == NULL)
-		return (-1);
-	for (i = 0; str[i] != '\0'; i++)
+	if (str == NULL)
+		str = "(null)";
+	for (i = 0; str[i]; i++)
 		prtchar(str[i]);
 	return (i);
 }
