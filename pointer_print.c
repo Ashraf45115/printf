@@ -9,8 +9,8 @@ int print_pointer(va_list p)
 	void *ptr;
 	char *str = "(nil)";
 	long int j;
-	int i, c ;
-	
+	int i, c;
+
 	ptr = va_arg(p, void *);
 	if (ptr == NULL)
 	{

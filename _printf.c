@@ -49,7 +49,6 @@ int _printf(const char *format, ...)
 
 	va_start(p, format);
 	count = 0;
-
 	if (format == NULL)
 		return (-1);
 	for (i = 0; format[i] != '\0'; i++)
@@ -63,7 +62,13 @@ int _printf(const char *format, ...)
 			return (count);
 		else if ((format[i] == '%') && !get_func(&format[i + 1]))
 		{
-			prtchar(format[i]);
+			if (format[i + 1] == '%')
+			{
+				prtchar('%');
+				i++;
+			}
+			else
+				prtchar(format[i]);
 			count++;
 		}
 		else if (format[i + 1] != '\0')
@@ -74,11 +79,6 @@ int _printf(const char *format, ...)
 				count += f(p);
 				i++;
 			}
-		}
-		else if ((format[i + 1] == '%'))
-		{
-			prtchar('%');
-			count++;
 		}
 	}
 	va_end(p);

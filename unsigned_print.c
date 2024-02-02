@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * print_oct - prints integer
+ * print_u - prints integer
  * @u: integer input
  * Return: 1
  */
