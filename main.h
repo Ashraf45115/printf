@@ -35,6 +35,7 @@ int print_S(va_list S);
 int print_pointer(va_list P);
 int print_hex_hlpr(unsigned long int n);
 int print_HEX_hlpr(unsigned int n);
+int print_rev(va_list r);
 
 #endif /*MAIN_H*/
 
