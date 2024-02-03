@@ -13,7 +13,7 @@ int print_S(va_list S)
 	str = va_arg(S, char *);
 	if (str == NULL)
 		return (-1);
-	for (i = 0; str[i] != '0'; i++)
+	for (i = 0; str[i] != '\0'; i++)
 	{
 		if (str[i] < 32 || str[i] >= 127)
 		{
