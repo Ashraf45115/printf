@@ -6,10 +6,9 @@
  */
 int print_rev(va_list r)
 {
-	char *str;
+	char *str = va_arg(r, char *);
 	int i = 0, j;
 
-	str = va_arg(r, char *);
 	if (str == NULL)
 		str = "(null)";
 
